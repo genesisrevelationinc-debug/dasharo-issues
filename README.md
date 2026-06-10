@@ -34,9 +34,41 @@ Below is a list of open issues affecting specific devices:
 - [Asus KGPE-D16](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22asus_kgpe-d16%22)
 - [Dell OptiPlex 7010](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22dell_optiplex_9010%22)
 - [Dell OptiPlex 9010](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22dell_optiplex_9010%22)
-- [Hardkernel Odroid H4](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22hardkernel_odroid_h4%22)
-- [MSI Pro Z690-A](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22MSI%20PRO%20Z690-A%20boards%22)
-- [MSI Pro Z790-P](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22MSI%20PRO%20Z790-P%20boards%22)
+[here](https://github.com/Dasharo/dasharo-issues/issues?q=is:issue+state:open+%28label:bounty-warmup+OR+label:bounty-easy+OR+label:bounty-medium+OR+label:bounty-hard+OR+label:bounty%29).
+
+## EC Testability Interface Implementation
+
+### Overview
+
+This document describes the implementation of an EC testability interface to enable comprehensive remote testing capabilities for laptops. The interface provides a simple console interface to control platform aspects like generating key presses, button presses, and controlling power.
+
+### Features
+
+- **Remote Control Interface**: Simple console interface over SMBus or parallel interface for EC control
+- **Key Press Generation**: Ability to simulate key presses remotely
+- **Button Press Simulation**: Capability to simulate hardware button presses
+- **Power Control**: Remote power state control functionality
+- **BIOS Configuration**: Debugging option that defaults to disabled
+
+### Implementation Details
+
+The implementation extends the debugger firmware to support a bidirectional console interface that allows:
+
+- Sending commands to the EC for key/button simulation
+- Controlling power states remotely
+- Configuring via BIOS settings (must be enabled explicitly)
+
+### Security Considerations
+
+- BIOS debugging option defaults to disabled
+- Proper authentication and access controls should be implemented
+- Interface should only be enabled in controlled testing environments
+
+### Usage
+
+This interface is intended for remote testing scenarios and should be used with appropriate security measures in controlled environments only.
+
+<!-- BEGIN DEVICE ISSUES -->
 - [NovaCustom NS5x 11th Gen](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22novacustom_ns5x/7x_tgl%22)
 - [NovaCustom NS5x 11th Gen](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22novacustom_ns5x/7x_adl%22)
 - [NovaCustom NS7x 11th Gen](https://github.com/dasharo/dasharo-issues/issues?q=is%3Aissue+state%3Aopen+label%3A%22novacustom_ns5x/7x_tgl%22)
